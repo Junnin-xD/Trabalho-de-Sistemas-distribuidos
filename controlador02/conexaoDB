@@ -1,0 +1,29 @@
+import pymongo
+
+cliente = pymongo.MongoClient("mongodb://localhost:30002/")
+
+banco_dados = cliente["alarme_db"]
+
+colecao = banco_dados["status"]
+
+documento = {"intensidade": 50}
+resultado = colecao.insert_one(documento)
+print(f"Inserido ID: {resultado.inserted_id}")
+
+documentos = colecao.find()
+for doc in documentos:
+    print(doc)
+
+#filtro = {"intensidade": 50}
+#atualizacao = {"$set": {"intensidade": 26}}
+#colecao.update_one(filtro, atualizacao)
+#print("Documento atualizado.")
+
+#documentos_atualizados = colecao.find()
+#for doc_atualizado in documentos_atualizados:
+#    print(doc_atualizado)
+
+#colecao.delete_one(filtro)
+#print("Documento deletado.")
+
+cliente.close()
