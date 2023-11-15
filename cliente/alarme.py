@@ -1,20 +1,23 @@
-from controlador01 import controlador as controlador1
-from controlador02 import controlador as controlador2
+from ..controlador01 import controlador as controlador01
+from ..controlador02 import controlador as controlador02
+
+x = controlador01
+y = controlador02
 
 def acionar_alarme():
 
-    controlador1.acionar_alarme()
-    controlador2.acionar_alarme()
+    x.acionar_alarme()
+    y.acionar_alarme()
     
 def desativar_alarme():
 
-    controlador1.desativar_alarme()
-    controlador2.desativar_alarme()
+    x.desativar_alarme()
+    y.desativar_alarme()
     
 def aproximacao():
 
-    controlador1.aproximacao()
-    controlador2.aproximacao()
+    x.aproximacao()
+    y.aproximacao()
     
 while True:
     
