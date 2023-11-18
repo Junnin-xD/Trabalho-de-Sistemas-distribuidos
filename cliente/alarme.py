@@ -1,35 +1,32 @@
-from ..controlador01 import controlador as controlador01
-from ..controlador02 import controlador as controlador02
+import controlador01.controlador
+import controlador02.controlador
 
-x = controlador01
-y = controlador02
 
-def acionar_alarme():
+def aciona_alarme():
+    controlador01.controlador.acionar_alarme()
+    controlador02.controlador.acionar_alarme()
 
-    x.acionar_alarme()
-    y.acionar_alarme()
-    
-def desativar_alarme():
 
-    x.desativar_alarme()
-    y.desativar_alarme()
-    
-def aproximacao():
+def desativa_alarme():
+    controlador01.controlador.desativar_alarme()
+    controlador02.controlador.desativar_alarme()
 
-    x.aproximacao()
-    y.aproximacao()
-    
+
+def aproxima():
+    controlador01.controlador.aproximacao()
+    controlador02.controlador.aproximacao()
+
+
 while True:
-    
+
     entrada = input("Digite 1 para acionar o alarme, 2 para desativar o alarme ou 3 para detectar aproximação: ")
-    
+
     if entrada == "1":
-        acionar_alarme()
+        aciona_alarme()
     elif entrada == "2":
-        desativar_alarme()
+        desativa_alarme()
     elif entrada == "3":
-        aproximacao()
+        aproxima()
     else:
         print("Entrada inválida.")
         break
-    
